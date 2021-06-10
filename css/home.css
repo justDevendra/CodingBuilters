@@ -283,6 +283,9 @@ img {
     min-height: 350px;
     max-height: 350px;
   }
+  .bossDiv {
+    margin-left: -20px !important;
+  }
 }
 
 @media (min-width: 576px) and (max-width: 767.98px) {
@@ -317,6 +320,13 @@ img {
   #taskIcon, #bossIcon {
     height: 90px;
   }
+  .bossDiv {
+    margin-left: -25px !important;
+  }
+  .bg3 {
+    min-height: 780px;
+    max-height: 780px;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 991.98px) {
@@ -349,6 +359,9 @@ img {
   }
   #taskIcon, #bossIcon {
     height: 100px;
+  }
+  .bossDiv {
+    margin-left: -20px !important;
   }
 }
 

@@ -277,6 +277,9 @@ img{
     min-height: 350px;
     max-height: 350px;
   }
+  .bossDiv{
+    margin-left: -20px !important;
+  }
 }
 
 // Small devices (landscape phones, 576px and up)
@@ -312,7 +315,13 @@ img{
   #taskIcon, #bossIcon{
     height: 90px;
   }
-
+  .bossDiv{
+    margin-left: -25px !important;
+  }
+  .bg3{
+    min-height: 780px;
+    max-height: 780px;
+  }
 }
 
 // Medium devices (tablets, 768px and up)
@@ -346,6 +355,9 @@ img{
   }
   #taskIcon, #bossIcon{
     height: 100px;
+  }
+  .bossDiv{
+    margin-left: -20px !important;
   }
 }
 
