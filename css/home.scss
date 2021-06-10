@@ -213,8 +213,10 @@ img{
 
 .teamDiv{
   border-radius: 50%;
-  position: relative;
   margin-left: 20px;
+  height: 110px;
+  width: 110px;
+  opacity: .5;
 }
 
 .teamDiv:nth-child(2) {
@@ -227,11 +229,23 @@ img{
   margin-left: -5px;
 }
 
-.teamDiv{
-  height: 110px;
-  width: 110px;
+.teamDivPhone{
+  border-radius: 50%;
+  height: 80px;
+  width: 80px;
   opacity: .5;
 }
+
+.teamDivPhone:nth-child(2) {
+  height: 100px;
+  width: 100px;
+  opacity: 1;
+}
+
+.teamDivPhone:nth-child(1) {
+  margin-left: -5px;
+}
+
 
 // Extra Small devices (576px and down)
 @media (max-width: 576px) { 
@@ -259,6 +273,10 @@ img{
   #taskIcon, #bossIcon{
     height: 80px;
   } 
+  .bg4{
+    min-height: 350px;
+    max-height: 350px;
+  }
 }
 
 // Small devices (landscape phones, 576px and up)
@@ -294,6 +312,7 @@ img{
   #taskIcon, #bossIcon{
     height: 90px;
   }
+
 }
 
 // Medium devices (tablets, 768px and up)

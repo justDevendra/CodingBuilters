@@ -246,3 +246,69 @@ setInterval(() => {
     });
     waitTeam()
 },3000)
+
+let teamDivsContainerPhone = document.querySelector(".containerTeamDivPhone")
+let teamDivsPhone = document.querySelectorAll(".teamDivPhone")
+let combTeamPhone = [[0,1,2],[1,2,0],[2,0,1]]
+let tranlateValPhone = [[-50,190,-80,-80],[-100,80,-190,80],[-200,-0,-0,-0]]
+let countTeamPhone = 0
+let avatarNumPhone = 3
+let activeTeamMatePhone = 1
+
+const waitTeamPhone = async () => {
+    await sleep(300);
+    countTeamPhone++
+    if(countTeamPhone==3){
+        countTeamPhone=0
+    }
+}
+
+const wait3Phone = async (x,val) => {
+    await sleep(200);
+    if(avatarNumPhone==avatarNumMax){
+        avatarNumPhone=0
+    }
+    if(activeTeamMatePhone==5){
+        activeTeamMatePhone=-1
+    }
+    avatarNumPhone++
+    activeTeamMatePhone++
+    teamDivsPhone[x].src = "././img/home/teamAvatars/avatar" + avatarNumPhone +".svg"
+    anime({
+        targets: teamDivsPhone[x],
+        translateX: val,
+        height: "80px",
+        width: "80px",
+        opacity: ["0%","50%"],
+        easing: 'spring(1, 80, 10, 0)'
+    });
+}
+
+setInterval(() => {
+    anime({
+        targets: teamDivsPhone[combTeamPhone[countTeamPhone][0]],
+        translateX: tranlateValPhone[countTeam][0],
+        height: "80px",
+        width: "80px",
+        opacity: ["50%","0%"],
+        easing: 'spring(1, 80, 10, 0)'
+    });
+    wait3Phone(combTeamPhone[countTeamPhone][0],tranlateValPhone[countTeamPhone][1])
+    anime({
+        targets: teamDivsPhone[combTeamPhone[countTeamPhone][1]],
+        translateX: tranlateValPhone[countTeamPhone][2],
+        height: "80px",
+        width: "80px",
+        opacity: ["100%","50%"],
+        easing: 'spring(1, 80, 10, 0)'
+    });
+    anime({
+        targets: teamDivsPhone[combTeamPhone[countTeamPhone][2]],
+        translateX: tranlateValPhone[countTeamPhone][3],
+        height: "100px",
+        width: "100px",
+        opacity: ["50%","100%"],
+        easing: 'spring(1, 80, 10, 0)'
+    });
+    waitTeamPhone()
+},3000)
