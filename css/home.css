@@ -38,6 +38,7 @@ img {
 
 .navbar-brand {
   color: #00E9FF !important;
+  z-index: 100;
 }
 
 .nav-link {
@@ -64,20 +65,94 @@ img {
   z-index: 2;
 }
 
+#menuDiv {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-color: white;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.menu {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+}
+
+.line {
+  fill: none;
+  stroke: black;
+  stroke-width: 4;
+  -webkit-transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1), stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1), stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line1 {
+  stroke-dasharray: 60 207;
+  stroke-width: 4;
+}
+
+.line2 {
+  stroke-dasharray: 60 60;
+  stroke-width: 4;
+}
+
+.line3 {
+  stroke-dasharray: 60 207;
+  stroke-width: 4;
+}
+
+.opened .line1 {
+  stroke-dasharray: 90 207;
+  stroke-dashoffset: -134;
+  stroke-width: 4;
+}
+
+.opened .line2 {
+  stroke-dasharray: 1 60;
+  stroke-dashoffset: -30;
+  stroke-width: 4;
+}
+
+.opened .line3 {
+  stroke-dasharray: 90 207;
+  stroke-dashoffset: -134;
+  stroke-width: 4;
+}
+
 .bar1, .bar2, .bar3 {
   width: 35px;
-  height: 5px;
+  height: 3px;
   background-color: #333333;
   margin: 6px 0;
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
 
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 5px);
+          transform: rotate(-45deg) translate(-9px, 5px);
+}
+
+.change .bar2 {
+  opacity: 0;
+}
+
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -4px);
+          transform: rotate(45deg) translate(-8px, -4px);
+}
+
 .bg1 {
   position: relative;
   width: 90%;
   min-height: 650px;
-  max-height: 700px;
+  max-height: 680px;
   background: linear-gradient(89.69deg, rgba(255, 255, 255, 0) 0.27%, rgba(220, 234, 242, 0.4) 99.74%);
   border-radius: 0px 0px 195px 0px;
 }
@@ -223,23 +298,21 @@ img {
 .bg4InfoBox {
   width: 250px;
   height: 200px;
-  background-color: #C8F4FF;
+  background-color: rgba(200, 244, 255, 0.4);
   position: absolute;
   border-radius: 20px;
-  -webkit-filter: drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.25));
-          filter: drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.25));
 }
 
 .bg4InfoBox:nth-child(2) {
   margin-top: 150px;
   margin-left: 340px;
-  background-color: #E9F3FB;
+  background-color: rgba(233, 243, 251, 0.8);
 }
 
 .bg4InfoBox:nth-child(3) {
   margin-top: 150px;
   margin-right: 350px;
-  background-color: #E9F3FB;
+  background-color: rgba(233, 243, 251, 0.8);
 }
 
 .teamDiv {

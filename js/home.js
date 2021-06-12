@@ -92,7 +92,7 @@ const bg2ContentFunction = () => {
 
 timerBg2Content = setInterval(bg2ContentFunction, 11000);
 
-function sleep(ms) {
+const sleep = (ms) => {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
@@ -312,3 +312,23 @@ setInterval(() => {
     });
     waitTeamPhone()
 },3000)
+
+let navToggleCont = 0
+
+const navToggler = (x) => {
+    let md = document.querySelector("#menuDiv")
+    let mbtn = document.querySelector(".navbar-toggler")
+
+    navToggleCont++
+    if(navToggleCont%2==0){
+        md.style.opacity = "0"
+        document.body.style.overflowX = "visible"
+    }else{
+        md.style.opacity = "1"
+        md.style.zIndex = "10"
+        mbtn.style.zIndex = "11"
+        document.body.style.overflow = "hidden"
+    }
+    x.classList.toggle("change");
+}
+
