@@ -16,18 +16,40 @@ html{
 
 }
 
-/* width */
+.loader{
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-color: white;
+  z-index: 101;
+  min-height: 250px;
+}
+
+.loaderLogoAnime{
+  animation-name: logoLoader;
+  animation-duration: .9s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
+}
+
+@keyframes logoLoader {
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}
+
 ::-webkit-scrollbar {
   width: 5px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
   box-shadow: inset 0 0 2px grey;
   border-radius: 3px;
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
   background: rgba($color: #00E9FF, $alpha: 0.5);
   border-radius: 3px;
@@ -115,27 +137,6 @@ img{
   stroke-dasharray: 90 207;
   stroke-dashoffset: -134;
   stroke-width: 4;
-}
-
-    
-.bar1, .bar2, .bar3 {
-  width: 35px;
-  height: 3px;
-  background-color: $colorPrimary;
-  margin: 6px 0;
-  transition: 0.4s;
-}
-
-.change .bar1 {
-  transform: rotate(-45deg) translate(-9px, 5px);
-}
-
-.change .bar2 {
-  opacity: 0;
-}
-
-.change .bar3 {
-  transform: rotate(45deg) translate(-8px, -4px);
 }
 
 .bg1{

@@ -10,19 +10,58 @@ html {
   min-width: 300px;
 }
 
-/* width */
+.loader {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-color: white;
+  z-index: 101;
+  min-height: 250px;
+}
+
+.loaderLogoAnime {
+  -webkit-animation-name: logoLoader;
+          animation-name: logoLoader;
+  -webkit-animation-duration: .9s;
+          animation-duration: .9s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+}
+
+@-webkit-keyframes logoLoader {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes logoLoader {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
 ::-webkit-scrollbar {
   width: 5px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 2px grey;
           box-shadow: inset 0 0 2px grey;
   border-radius: 3px;
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
   background: rgba(0, 233, 255, 0.5);
   border-radius: 3px;
@@ -123,29 +162,6 @@ img {
   stroke-dasharray: 90 207;
   stroke-dashoffset: -134;
   stroke-width: 4;
-}
-
-.bar1, .bar2, .bar3 {
-  width: 35px;
-  height: 3px;
-  background-color: #333333;
-  margin: 6px 0;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-}
-
-.change .bar1 {
-  -webkit-transform: rotate(-45deg) translate(-9px, 5px);
-          transform: rotate(-45deg) translate(-9px, 5px);
-}
-
-.change .bar2 {
-  opacity: 0;
-}
-
-.change .bar3 {
-  -webkit-transform: rotate(45deg) translate(-8px, -4px);
-          transform: rotate(45deg) translate(-8px, -4px);
 }
 
 .bg1 {

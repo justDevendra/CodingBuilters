@@ -1,3 +1,14 @@
+document.body.style.overflow = "hidden"
+let loaderTime = Math.floor(Math.random() * 2500) + 1000;
+
+setTimeout(function(){
+    let loaderWin = document.querySelector(".loader")
+    let loaderImg = document.querySelector(".loaderLogoAnime")
+    loaderWin.style.zIndex = "-10"
+    document.body.style.overflow = "visible"
+    loaderImg.style.display = "none"
+}, loaderTime)
+
 let logo = document.querySelector('.navbar-brand')
 
 const logoOver = () => {
@@ -5,7 +16,7 @@ const logoOver = () => {
         targets: logo,
         rotate: 180,
         easing: 'spring(1, 80, 10, 0)'
-    })
+    });
 }
 
 const logoOut = () => {
@@ -13,7 +24,7 @@ const logoOut = () => {
         targets: logo,
         rotate: 360,
         easing: 'spring(1, 80, 10, 0)'
-    })
+    });
 }
 
 logo.addEventListener('mouseover', logoOver)
@@ -322,7 +333,7 @@ const navToggler = (x) => {
     navToggleCont++
     if(navToggleCont%2==0){
         md.style.opacity = "0"
-        document.body.style.overflowX = "visible"
+        document.body.style.overflow = "visible"
     }else{
         md.style.opacity = "1"
         md.style.zIndex = "10"
